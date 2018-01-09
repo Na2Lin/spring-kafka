@@ -21,7 +21,8 @@ public class DemoController {
     @RequestMapping("send")
     public String demoTest() {
         Map message = new HashMap();
-        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send("topic1", message.toString());
+        message.put("aaa","bbb");
+        ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send("topic_1", message.toString());
         System.out.println(future);
         return "success";
     }
