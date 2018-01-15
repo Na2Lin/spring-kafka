@@ -1,0 +1,21 @@
+server:
+  port: 80
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  kafka:
+    bootstrap-servers: 120.79.77.11:9092,120.79.77.11:9093,120.79.77.11:9094
+    producer:
+      retries: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+datasource:
+  url: jdbc:mysql://120.79.77.11:3784/demorocket
+  username: root
+  password: HaoHao_112
+  driverName: com.mysql.jdbc.Driver
+mybatis:
+  mapper-locations: classpath*:com/tml/springkafka/mapper/*
+
